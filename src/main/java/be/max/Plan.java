@@ -17,6 +17,22 @@ public class Plan {
         rows.add(row);
     }
 
+
+    //Represents the plan as a 2 dimension array filled with true and false to indicate the state of the cells.
+    public boolean[][] toArray(){
+        int nbrRows = rows.size();
+        int lengthRows = rows.get(0).size();
+        boolean[][] boolsArray = new boolean[lengthRows][nbrRows];
+        for (int i = 0; i < nbrRows; i++) {
+            Row row = rows.get(i);
+            for (int j = 0; j < lengthRows; j++) {
+                boolsArray[j][i] = row.get(j).getState();
+            }
+        }
+        return boolsArray;
+        
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
