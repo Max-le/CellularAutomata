@@ -22,9 +22,22 @@ public class Iterator {
         }
         return nextRow;
     }
-//
-//    public static Plan (Row initialRow){
-//
-//
-//    }
+
+
+    /**
+     * Fills a plan by iteration.
+     * @param initialRow the starting row
+     * @return A plan filled with rows.
+     */
+    public static Plan generatePlan(Row initialRow, int nbrRows){
+        Plan plan = new Plan();
+        Row currentRow = initialRow;
+        plan.add(currentRow);
+        for (int i = 0; i < nbrRows; i++) {
+            Row nextRow = makeNextRow(currentRow);
+            plan.add(nextRow);
+            currentRow = nextRow;
+        }
+        return plan;
+    }
 }

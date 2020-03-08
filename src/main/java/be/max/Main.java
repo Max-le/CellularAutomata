@@ -6,11 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Plan plan = new Plan();
         Row row = generateRandomRow(10);
-        Row nextRow = Iterator.makeNextRow(row);
-        plan.add(row);
-        plan.add(nextRow);
+        Plan plan = Iterator.generatePlan(row, 5);
         System.out.println(plan.toString());
 
     }
