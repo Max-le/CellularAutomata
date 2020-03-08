@@ -33,7 +33,7 @@ public class Iterator {
         Plan plan = new Plan();
         Row currentRow = initialRow;
         plan.add(currentRow);
-        for (int i = 0; i < nbrRows; i++) {
+        for (int i = 0; i < nbrRows-1; i++) {
             Row nextRow = makeNextRow(currentRow);
             plan.add(nextRow);
             currentRow = nextRow;
