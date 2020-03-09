@@ -8,6 +8,8 @@ The program can generate a visualization of the plan. Example for the Rule 30 :
 Here is the rule 90, generating a [Sierpinski triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) :
 ![Sierpinski Tringle Rule 90](sierpinski_triangle.bmp)
 
+
+[A list showing all 256 possibles rules](https://plato.stanford.edu/entries/cellular-automata/supplement.html)
 ## Roadmap
 Things to do to go further with this project :
 - Create an interface for rules 

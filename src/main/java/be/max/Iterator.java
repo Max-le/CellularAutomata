@@ -1,5 +1,9 @@
 package be.max;
 
+import be.max.rules.Rule250;
+import be.max.rules.Rule30;
+import be.max.rules.Rule90;
+
 public class Iterator {
 
     /**
@@ -12,7 +16,7 @@ public class Iterator {
         for (int i = 0; i < row.size(); i++) {
 
             boolean notOnLimits = i > 0 && i < row.size()-1;
-            Rule rule = new Rule90();
+            Rule rule = new Rule250();
             if (notOnLimits)
             {
                 nextRow.add(rule.apply(row.get(i-1), row.get(i), row.get(i+1)).getState());
