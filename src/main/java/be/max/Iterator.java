@@ -12,9 +12,10 @@ public class Iterator {
         for (int i = 0; i < row.size(); i++) {
 
             boolean notOnLimits = i > 0 && i < row.size()-1;
+            Rule rule = new Rule90();
             if (notOnLimits)
             {
-                nextRow.add(Rule30.applyRule(row.get(i-1), row.get(i), row.get(i+1)).getState());
+                nextRow.add(rule.apply(row.get(i-1), row.get(i), row.get(i+1)).getState());
             }
             else{
                 nextRow.add(row.get(i).getState());
