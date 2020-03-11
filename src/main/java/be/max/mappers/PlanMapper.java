@@ -1,4 +1,4 @@
-package be.max;
+package be.max.mappers;
 
 import java.util.ArrayList;
 import java.util.List;
