@@ -19,13 +19,13 @@ public class ImageCreator {
     static void createImage(boolean[][] plan) throws IOException {
         int lengthRow = plan.length;
         int nbrRows = plan[0].length;
-        BufferedImage image = new BufferedImage(lengthRow, nbrRows,BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(nbrRows, lengthRow,BufferedImage.TYPE_INT_RGB);
         Color aliveCell = Color.BLACK;
         Color deadCELL = Color.WHITE;
 
-        for (int i = 0; i < plan.length; i++) {
-            for (int j = 0; j < plan[0].length; j++) {
-                if (plan[i][j]){
+        for (int i = 0; i < nbrRows; i++) {
+            for (int j = 0; j < lengthRow; j++) {
+                if (plan[j][i]){
                     image.setRGB(i, j,  aliveCell.getRGB());
                 }
                 else{
