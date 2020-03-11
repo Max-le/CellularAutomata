@@ -22,11 +22,11 @@ public class Plan {
     public boolean[][] toArray(){
         int nbrRows = rows.size();
         int lengthRows = rows.get(0).size();
-        boolean[][] boolsArray = new boolean[lengthRows][nbrRows];
+        boolean[][] boolsArray = new boolean[nbrRows][lengthRows];
         for (int i = 0; i < nbrRows; i++) {
             Row row = rows.get(i);
             for (int j = 0; j < lengthRows; j++) {
-                boolsArray[j][i] = row.get(j).getState();
+                boolsArray[i][j] = row.get(j).getState();
             }
         }
         return boolsArray;
