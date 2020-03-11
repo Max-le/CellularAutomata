@@ -11,7 +11,7 @@ public class Iterator {
      * @param row the current status of the row.
      * @return next state of the row.
      */
-    public static Row makeNextRow(Row row){
+    private static Row makeNextRow(Row row){
         Row nextRow = new Row();
         for (int i = 0; i < row.size(); i++) {
 
