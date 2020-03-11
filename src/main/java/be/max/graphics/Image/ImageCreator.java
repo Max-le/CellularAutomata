@@ -17,7 +17,8 @@ public class ImageCreator {
      * @throws IOException
      */
     static void createImage(boolean[][] plan) throws IOException {
-        int nbrRows = plan[0].length; int lengthRow = plan.length;
+        int lengthRow = plan.length;
+        int nbrRows = plan[0].length;
         BufferedImage image = new BufferedImage(lengthRow, nbrRows,BufferedImage.TYPE_INT_RGB);
         Color aliveCell = Color.BLACK;
         Color deadCELL = Color.WHITE;
