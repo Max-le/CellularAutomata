@@ -1,6 +1,10 @@
 package be.max.controllers;
 
 
+import be.max.Generator;
+import be.max.Iterator;
+import be.max.Plan;
+import be.max.PlanMapper;
 import be.max.representations.CellPlan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,16 +17,13 @@ import java.util.List;
 public class CellPlanController {
 
     @GetMapping("")
-    public CellPlan cellPlan(@RequestParam(value ="rule") String rule, @RequestParam(value="number") int number){
+    public CellPlan cellPlan(@RequestParam(value ="rule") String rule,
+                             @RequestParam(value="numberRows") int nbRows,
+                             @RequestParam(value="lengthRow") int lengthRow){
 
-        List<String> testPlan = new ArrayList<>();
-        testPlan.add("00100");
-        testPlan.add("00101");
-        testPlan.add("0110110");
-        System.out.println("Received "+rule);
-        System.out.println("Received "+number);
-
-        return new CellPlan(testPlan);
+        Plan plan = Iterator.generatePlan(Generator.oneCellRow(lengthRow), nbRows);
+        PlanMapper mapper = new PlanMapper();
+        return new CellPlan(mapper.toList(plan.toArray()));
     }
 
 }
