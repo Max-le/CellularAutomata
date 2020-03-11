@@ -10,7 +10,7 @@ public class PlanMapper {
      * @return A list containing String : each string represents one row of the plan, where each character represents one cell.
      * <br>A cell with the state false becomes 0, true becomes 1.
      */
-    List<String> toList(boolean[][] plan){
+    public List<String> toList(boolean[][] plan){
         //TODO See if it goes faster with StringBuilder. Can probably be optimized.
         List<String> cellPlan = new ArrayList<>(plan.length);
         for (int i = 0; i < plan.length; i++) {
