@@ -9,17 +9,17 @@ public class Iterator {
     /**
      * Computes the next state of a row.
      * @param row the current status of the row.
+     * @param evolutionRule the rule to follows to create the next row.
      * @return next state of the row.
      */
-    private static Row makeNextRow(Row row){
+    private static Row makeNextRow(Row row, Rule evolutionRule){
         Row nextRow = new Row();
         for (int i = 0; i < row.size(); i++) {
 
             boolean notOnLimits = i > 0 && i < row.size()-1;
-            Rule rule = new Rule250();
             if (notOnLimits)
             {
-                nextRow.add(rule.apply(row.get(i-1), row.get(i), row.get(i+1)).getState());
+                nextRow.add(evolutionRule.apply(row.get(i-1), row.get(i), row.get(i+1)).getState());
             }
             else{
                 nextRow.add(row.get(i).getState());
@@ -34,12 +34,12 @@ public class Iterator {
      * @param initialRow the starting row
      * @return A plan filled with rows.
      */
-    public static Plan generatePlan(Row initialRow, int nbrRows){
+    public static Plan generatePlan(Row initialRow, int nbrRows, Rule rule){
         Plan plan = new Plan();
         Row currentRow = initialRow;
         plan.add(currentRow);
         for (int i = 0; i < nbrRows-1; i++) {
-            Row nextRow = makeNextRow(currentRow);
+            Row nextRow = makeNextRow(currentRow, rule);
             plan.add(nextRow);
             currentRow = nextRow;
         }
