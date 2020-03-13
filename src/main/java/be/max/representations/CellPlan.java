@@ -9,11 +9,4 @@ public class CellPlan {
         this.plan = plan;
     }
 
-    public List<String> getPlan() {
-        return plan;
-    }
-
-    public void setPlan(List<String> plan) {
-        this.plan = plan;
-    }
 }
