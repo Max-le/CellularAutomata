@@ -5,7 +5,7 @@ import be.max.Generator;
 import be.max.Iterator;
 import be.max.Plan;
 import be.max.Rule;
-import be.max.rules.Rule110;
+import be.max.rules.*;
 
 import java.io.IOException;
 
